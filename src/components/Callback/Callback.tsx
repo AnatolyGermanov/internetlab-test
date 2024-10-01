@@ -8,7 +8,7 @@ import Button from '../ui/Button/Button';
 
 const Callback = () => {
     return (
-        <section className={styles.section}>
+        <section className={styles.section} id='callback'>
             <div className={clsx(styles.section__inner, 'container')}>
                 <h2 className={styles.section__title}>Отправь форму</h2>
                 <form className={styles.form}>

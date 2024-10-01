@@ -9,7 +9,7 @@ const FAQ = () => {
     const FAQs = useSelector((state: IStoreState) => state.FAQs);
 
     return (
-        <section className={clsx(styles.section, 'container')}>
+        <section className={clsx(styles.section, 'container')} id='FAQ'>
             <h2 className={styles.section__title}>Вопросы и ответы</h2>
             <ul className={styles['FAQ-list']}>
                 {FAQs.map((value, index) => (

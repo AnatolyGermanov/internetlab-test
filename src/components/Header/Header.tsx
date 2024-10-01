@@ -7,10 +7,10 @@ import logoLight from '../../assets/images/logo-light.svg';
 import logoDark from '../../assets/images/logo-dark.svg';
 
 const menuLinks = [
-    { title: 'Как это работает', href: '' },
-    { title: '3-й блок', href: '' },
-    { title: 'Вопросы и ответы', href: '' },
-    { title: 'Форма', href: '' },
+    { title: 'Как это работает', href: '#howItWorks' },
+    { title: '3-й блок', href: '#thirdBlock' },
+    { title: 'Вопросы и ответы', href: '#FAQ' },
+    { title: 'Форма', href: '#callback' },
 ];
 
 const Header = () => {
@@ -31,7 +31,10 @@ const Header = () => {
                 <ul className={styles['header__menu-list']}>
                     {menuLinks.map((value, index) => (
                         <li className={styles['header__menu-item']} key={index}>
-                            <a className={styles['header__menu-link']} href="/">
+                            <a
+                                className={styles['header__menu-link']}
+                                href={value.href}
+                            >
                                 {value.title}
                             </a>
                         </li>
@@ -81,7 +84,8 @@ const Header = () => {
                             >
                                 <a
                                     className={styles['modal__menu-link']}
-                                    href="/"
+                                    href={value.href}
+                                    onClick={() => modalRef.current?.close()}
                                 >
                                     {value.title}
                                 </a>

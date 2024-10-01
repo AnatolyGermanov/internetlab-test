@@ -32,7 +32,7 @@ const cardDataList = [
 
 const HowItWorks = () => {
     return (
-        <section className={clsx(styles.section, 'container')}>
+        <section className={clsx(styles.section, 'container')} id='howItWorks'>
             <h2 className={styles.section__title}>Как это работает</h2>
             <ul className={styles.section__list}>
                 {cardDataList.map((value, index) => (

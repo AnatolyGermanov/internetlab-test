@@ -7,7 +7,7 @@ import image from '../../assets/images/third-block-image.png';
 
 const ThirdBlock = () => {
     return (
-        <section className={clsx(styles.section, 'container')}>
+        <section className={clsx(styles.section, 'container')} id='thirdBlock'>
             <div className={styles.section__body}>
                 <h2 className={clsx(styles.section__title, 'h3')}>
                     Круто, ты дошел до третьего блока
