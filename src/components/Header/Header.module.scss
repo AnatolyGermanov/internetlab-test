@@ -1,0 +1,162 @@
+@use '../../assets/styles/media' as media;
+
+.header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 26px;
+    color: var(--color-white);
+
+    @include media.desktop {
+        padding-block: 9px;
+    }
+
+    &__menu {
+        &-list {
+            display: flex;
+            column-gap: 24px;
+        }
+
+        &-link {
+            display: inline-flex;
+            align-items: center;
+            min-height: 28px;
+            color: inherit;
+            text-underline-position: under;
+            text-decoration-thickness: 1px;
+            text-decoration-color: transparent;
+
+            @include media.hover {
+                text-decoration-color: currentColor;
+            }
+        }
+    }
+
+    &__modal {
+        top: 0;
+        left: auto;
+        right: 0;
+        width: 100%;
+        max-width: 375px;
+    }
+}
+
+.burger-button {
+    position: relative;
+    left: var(--container-padding-x);
+    width: 62px;
+    aspect-ratio: 1;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    color: inherit;
+
+    &::after,
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 22px;
+        height: 2px;
+        background-color: currentColor;
+    }
+
+    &::after {
+        translate: -50% calc(-50% + 5px);
+    }
+
+    &::before {
+        translate: -50% calc(-50% + -5px);
+    }
+}
+
+.modal {
+    --divider: 1px solid var(--color-light-gray);
+    --paddind-x: 16px;
+    --padding-y: 9px;
+
+    background-color: var(--color-white);
+    border: none;
+    padding: 0 var(--paddind-x);
+    padding-bottom: var(--padding-y);
+    margin: 0;
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-block: var(--padding-y);
+        border-bottom: var(--divider);
+    }
+
+    &__close-button-wrapper {
+        position: relative;
+        left: var(--paddind-x);
+        display: flex;
+    }
+
+    &__close-button {
+        position: relative;
+        width: 62px;
+        aspect-ratio: 1;
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        color: var(--color-black);
+
+        &::after,
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+            width: 22px;
+            height: 2px;
+            background-color: currentColor;
+        }
+
+        &::after {
+            rotate: 45deg;
+        }
+
+        &::before {
+            rotate: -45deg;
+        }
+    }
+
+    &__menu {
+        &-list {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &-item {
+            padding-block: 16px;
+            border-bottom: var(--divider);
+        }
+
+        &-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            height: 100%;
+            font-size: 18px;
+            line-height: 1.78;
+            color: var(--color-gray);
+            text-decoration: none;
+
+            &::after {
+                content: '';
+                display: block;
+                width: 24px;
+                aspect-ratio: 1;
+                background: url('../../assets/icons/close-bracket.svg') center
+                    no-repeat;
+            }
+        }
+    }
+}

@@ -1,0 +1,104 @@
+@use '../../assets/styles/media' as media;
+
+.section {
+    --container-width: 1008px;
+
+    padding-block: var(--section-padding-y);
+
+    &__title {
+        text-align: center;
+
+        @include media.mobile {
+            font-size: 24px;
+            line-height: 1.33;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 41px;
+        }
+    }
+}
+
+.FAQ {
+    &-list {
+        list-style: none;
+    }
+
+    &Item {
+        --indicatorRotate: 0deg;
+
+        padding-block: 24px;
+        border-top: 1px solid var(--color-light-gray);
+
+        &[open] {
+            --indicatorRotate: 45deg;
+        }
+
+        &__header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            column-gap: 20px;
+            list-style: none;
+            cursor: pointer;
+            user-select: none;
+            transition-duration: var(--transition-duration);
+
+            @include media.hover {
+                color: var(--color-primary);
+            }
+        }
+
+        &__title {
+            font-size: 18px;
+            line-height: 1.78;
+            font-weight: 600;
+        }
+
+        &__indicator {
+            position: relative;
+            top: 4px;
+            display: flex;
+            flex-shrink: 0;
+            width: 24px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            border: 2px solid currentColor;
+            rotate: var(--indicatorRotate);
+            transition-duration: var(--transition-duration);
+
+            @include media.mobile {
+                top: 6px;
+            }
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                translate: -50% -50%;
+                width: 12px;
+                height: 2px;
+                background-color: currentColor;
+            }
+
+            &::before {
+                rotate: 90deg;
+            }
+        }
+
+        &__content {
+            margin-top: 24px;
+            padding-right: 44px;
+            font-size: 18px;
+            line-height: 1.78;
+            color: var(--color-dark-gray);
+
+            @include media.mobile {
+                font-size: 16px;
+                line-height: 1.75;
+            }
+        }
+    }
+}

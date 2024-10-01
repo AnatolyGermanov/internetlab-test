@@ -1,0 +1,32 @@
+@use '../../../assets/styles/media' as media;
+
+.button {
+    --bgColor: var(--color-light-gray);
+    --hoverColor: var(--color-white);
+    --outlineHoverColor: var(--color-mid-gray);
+    --textColor: var(--color-black);
+
+    padding: 20px 40px;
+    background-color: var(--bgColor);
+    border: none;
+    outline: 1px solid transparent;
+    outline-offset: -1px;
+    border-radius: var(--border-radius-small);
+    color: var(--textColor);
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.2;
+    user-select: none;
+
+    @include media.hover {
+        background-color: var(--hoverColor);
+        outline-color: var(--outlineHoverColor);
+    }
+
+    &.primary {
+        --bgColor: var(--color-primary);
+        --hoverColor: var(--color-primary-hover);
+        --textColor: var(--color-white);
+        --outlineHoverColor: transparent;
+    }
+}

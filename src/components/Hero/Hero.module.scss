@@ -1,0 +1,73 @@
+@use '../../assets/styles/media' as media;
+
+.section {
+    --bgColor: color-mix(in srgb, var(--color-primary), transparent 20%);
+
+    background-image: linear-gradient(0deg, var(--bgColor), var(--bgColor)),
+        url('../../assets/images/hero-bg.png');
+    background-position: center;
+    background-size: cover;
+
+    &__inner {
+        max-width: calc(748px + var(--container-padding-x) * 2);
+        padding-block: 233px 313px;
+        color: var(--color-white);
+        text-align: center;
+
+        @include media.desktop {
+            max-width: calc(476px + var(--container-padding-x) * 2);
+            padding-block: 317px 398px;
+        }
+
+        @include media.tablet {
+            max-width: calc(288px + var(--container-padding-x) * 2);
+            padding-block: 92px 172px;
+        }
+
+        @include media.mobile {
+            padding-block: 48px 129px;
+        }
+    }
+
+    &__title {
+        @include media.desktop {
+            font-size: 32px;
+            line-height: 1.25;
+        }
+
+        @include media.tablet {
+            font-size: 24px;
+            line-height: 1.33;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 18px;
+
+            @include media.tablet {
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    &__description {
+        font-size: 18px;
+        line-height: 1.78;
+
+        @include media.desktop {
+            font-size: 16px;
+            line-height: 1.75;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 92px;
+
+            @include media.desktop {
+                margin-bottom: 40px;
+            }
+
+            @include media.tablet {
+                margin-bottom: 26px;
+            }
+        }
+    }
+}

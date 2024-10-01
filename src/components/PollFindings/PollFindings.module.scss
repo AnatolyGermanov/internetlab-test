@@ -1,0 +1,44 @@
+@use '../../assets/styles/media' as media;
+
+.section {
+    padding-block: 68px;
+    background-color: var(--color-extralight-gray);
+
+    @include media.tablet {
+        padding-block: 20px;
+    }
+}
+
+.pollFindings {
+    &-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 37px 32px;
+
+        @include media.tablet {
+            grid-template-columns: 1fr;
+            row-gap: 20px;
+        }
+    }
+
+    &-title {
+        font-size: 18px;
+        line-height: 1.78;
+
+        &:not(:last-child) {
+            margin-bottom: 17px;
+
+            @include media.tablet {
+                margin-bottom: 46px;
+            }
+
+            @include media.mobile {
+                margin-bottom: 14px;
+            }
+        }
+    }
+
+    &-content {
+        line-height: 1.75;
+    }
+}

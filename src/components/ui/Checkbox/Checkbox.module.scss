@@ -1,0 +1,34 @@
+@use '../../../assets/styles/media' as media;
+
+.checkbox {
+    --bgColor: transparent;
+
+    appearance: none;
+    position: relative;
+    width: 24px;
+    aspect-ratio: 1;
+    outline: 2px solid var(--color-mid-gray);
+    outline-offset: -2px;
+    border-radius: var(--border-radius-small);
+    background-color: var(--bgColor);
+
+    @include media.hover {
+        --bgColor: var(--color-light-gray);
+    }
+
+    &:checked {
+        --bgColor: var(--color-primary);
+        outline-color: transparent;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--color-white);
+            mask: url('../../../assets/icons/checkmark.svg') no-repeat center;
+        }
+    }
+}
