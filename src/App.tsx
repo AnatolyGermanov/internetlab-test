@@ -9,7 +9,7 @@ import Home from './pages/Home/Home';
 function App() {
     return (
         <Provider store={store}>
-            <Home />;
+            <Home />
         </Provider>
     );
 }
